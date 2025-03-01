@@ -1,8 +1,6 @@
 body {
   background-color: rgb(215, 221, 225);
-  background: url(../images/bg.jpg) no-repeat;
-  background-position: bottom center;
-  background-size: cover;
+
   margin: 0;
   box-sizing: border-box;
 }
@@ -17,10 +15,12 @@ p {
 
 .container {
   position: relative;
-
+  background: url(../images/bg.jpg) no-repeat;
+  background-position: bottom center;
+  background-size: cover;
   width: 100%;
   max-width: 1200px;
-  /* margin: 0 auto; */
+  margin: 0 auto;
   padding: 6vh 4vh 2vh;
   height: 100vh;
   box-sizing: border-box;
@@ -39,71 +39,6 @@ p {
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
-}
-
-/* Password Modal Styles */
-.password-modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-}
-
-.modal-content {
-  background-color: rgba(27, 14, 11, 0.95);
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content h2 {
-  color: rgb(255, 244, 184);
-  font-size: 2.5vh;
-  margin-bottom: 20px;
-}
-
-#passwordInput {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid rgb(255, 244, 184);
-  border-radius: 4px;
-  background-color: transparent;
-  color: rgb(255, 244, 184);
-  font-size: 2vh;
-  width: 80%;
-}
-
-#passwordInput::placeholder {
-  color: rgba(255, 244, 184, 0.7);
-}
-
-#submitPassword {
-  padding: 10px 20px;
-  background-color: rgb(255, 244, 184);
-  border: none;
-  border-radius: 4px;
-  color: rgb(27, 14, 11);
-  font-size: 2vh;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#submitPassword:hover {
-  background-color: rgba(255, 244, 184, 0.8);
-}
-
-.error-message {
-  color: red;
-  font-size: 1.8vh;
-  margin-top: 10px;
-  display: none;
 }
 
 .item-wrapper {
@@ -163,30 +98,6 @@ p {
   cursor: pointer;
 }
 
-.audio-controls {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(27, 14, 11, 0.95);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-}
-
-@media only screen and (max-width: 576px) {
-  .audio-controls .current-track {
-    display: none;
-  }
-}
 .gmail {
   font-size: 3.2vh;
   font-family: sans-serif;
@@ -272,116 +183,5 @@ p {
 
   .sign {
     bottom: 10vh;
-  }
-  /* Audio Controls */
-
-  @media only screen and (max-width: 576px) {
-    #currentTrack .current-track {
-      display: none;
-    }
-  }
-
-  .progress-container {
-    width: 100%;
-    height: 4px;
-    background: rgba(255, 244, 184, 0.1);
-  }
-
-  progress {
-    width: 100%;
-    height: 100%;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    background: transparent;
-  }
-
-  progress::-webkit-progress-value {
-    background-color: rgb(255, 244, 184);
-  }
-
-  progress::-webkit-progress-value {
-    background-color: rgb(255, 244, 184);
-  }
-
-  progress::-moz-progress-bar {
-    background-color: rgb(255, 244, 184);
-  }
-
-  .controls-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 20px;
-  }
-
-  @media only screen and (max-width: 768px) {
-    .audio-controls {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    #currentTrack {
-      display: none;
-    }
-
-    .audio-controls {
-      width: 100%;
-      bottom: 0;
-      border-radius: 0;
-    }
-  }
-
-  /* Show track info on larger screens */
-  @media only screen and (min-width: 769px) {
-    #currentTrack {
-      display: flex;
-      flex-direction: column;
-      max-width: 70%;
-    }
-  }
-  @media (max-width: 600px) {
-    .container {
-      padding: 4vh 2vh;
-    }
-    .title {
-      font-size: 3vh;
-    }
-    .listitem {
-      font-size: 2.5vh;
-    }
-  }
-  .current-track {
-    font-family: "adobe-handwriting-tiffany", sans-serif;
-    gap: 4px;
-  }
-
-  .track-title {
-    font-size: 2.4vh;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .track-version {
-    font-size: 1.8vh;
-    opacity: 0.8;
-  }
-
-  #playPauseBtn {
-    background: transparent;
-    border: none;
-    color: rgb(255, 244, 184);
-    font-size: 24px;
-    cursor: pointer;
-    padding: 0 10px;
-    transition: opacity 0.2s;
-  }
-
-  #playPauseBtn:hover {
-    opacity: 0.8;
-    cursor: pointer;
   }
 }
