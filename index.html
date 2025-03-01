@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/byx7akp.css" />
+    <title>Sabrina's Music</title>
+  </head>
+
+  <body onload="checkPassword()">
+    <div id="passwordModal" class="password-modal">
+      <div class="modal-content">
+        <h2>Enter Password</h2>
+        <input type="password" id="passwordInput" placeholder="Password" />
+        <button id="submitPassword">Submit</button>
+        <p id="errorMessage" class="error-message"></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="item-wrapper">
+        <div class="item">
+          <h1 class="title">"PolyFuck"</h1>
+          <p class="subtitle">Indie rock-pop, driving bass, high energy</p>
+
+          <a
+            href="#"
+            onclick="playAudio('audio1')"
+            class="listitem"
+            tabindex="0"
+          >
+            Full Track
+          </a>
+          <a href="#" onclick="playAudio('audio2')" class="listitem">
+            Vocals
+          </a>
+          <a href="#" onclick="playAudio('audio3')" class="listitem">
+            Instrumental
+          </a>
+
+          <audio id="audio1">
+            <source src="songs/PolyFuck_Master.wav" type="audio/wav" />
+          </audio>
+
+          <audio id="audio2">
+            <source src="songs/PolyFuck_Vox_Master.wav" type="audio/wav" />
+          </audio>
+
+          <audio id="audio3">
+            <source
+              src="songs/PolyFuck_Instrumental_Master.wav"
+              type="audio/wav"
+            />
+          </audio>
+        </div>
+        <div class="item">
+          <h1 class="title">"Hey You"</h1>
+          <p class="subtitle">
+            Chaplin-esque, melancholic, elegant, and timeless
+          </p>
+
+          <a
+            href="#"
+            onclick="playAudio('audio4')"
+            class="listitem"
+            tabindex="0"
+          >
+            Full Track
+          </a>
+          <a href="#" onclick="playAudio('audio5')" class="listitem">
+            Vocals
+          </a>
+          <a href="#" onclick="playAudio('audio6')" class="listitem">
+            Instrumental
+          </a>
+
+          <audio id="audio4">
+            <source src="songs/Hey You_01.mp3" type="audio/mp3" />
+          </audio>
+
+          <audio id="audio5">
+            <source src="songs/Hey You_Vocal.wav" type="audio/wav" />
+          </audio>
+
+          <audio id="audio6">
+            <source src="songs/Hey You_Inst.wav" type="audio/wav" />
+          </audio>
+        </div>
+
+        <div class="item">
+          <h1 class="title">"Hello,comment vas-tu?"</h1>
+          <p class="subtitle">Smooth indie pop-rock, percussive and alluring</p>
+          <a
+            href="#"
+            onclick="playAudio('audio7')"
+            class="listitem"
+            tabindex="0"
+          >
+            Full Track
+          </a>
+          <a href="#" onclick="playAudio('audio8')" class="listitem">
+            Vocals
+          </a>
+          <a href="#" onclick="playAudio('audio9')" class="listitem">
+            Instrumental
+          </a>
+
+          <audio id="audio7">
+            <source src="songs/Hello_11.wav" type="audio/wav" />
+          </audio>
+
+          <audio id="audio8">
+            <source src="songs/Hello_Vox_Master.wav" type="audio/wav" />
+          </audio>
+
+          <audio id="audio9">
+            <source
+              src="songs/Hello_Instrumental_Master.wav"
+              type="audio/wav"
+            />
+          </audio>
+        </div>
+      </div>
+
+      <div id="audioControls" class="audio-controls">
+        <div class="progress-container" onclick="seekAudio(event)">
+          <progress id="progressBar" value="0" max="1"></progress>
+        </div>
+        <div
+          class="controls-content"
+          style="display: flex; flex-direction: column; align-items: center"
+        >
+          <div
+            id="currentTrack"
+            class="current-track"
+            style="color: rgb(255, 244, 184)"
+          >
+            <span class="track-title"></span>
+            <span class="track-version"></span>
+          </div>
+          <div style="display: flex; gap: 20px; align-items: center">
+            <!-- Previous Button -->
+            <button id="prevBtn" onclick="playPrevious()" aria-label="Previous">
+              <i class="fas fa-backward"></i>
+            </button>
+            <!-- Play/Pause Button -->
+            <button
+              id="playPauseBtn"
+              onclick="togglePlayPause()"
+              aria-label="Play/Pause"
+            >
+              <i class="fas fa-pause"></i>
+            </button>
+            <!-- Next Button -->
+            <button id="nextBtn" onclick="playNext()" aria-label="Next">
+              <i class="fas fa-forward"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="gmail">
+        <a
+          style="color: rgb(255, 244, 184); text-decoration: none"
+          onmouseover="this.style.color ='white'"
+          onmouseout="this.style.color='rgb(255, 244, 184)'"
+          href="mailto:Kingcruiser-musicvault@gmail.com"
+          >Kingcruiser-musicvault@gmail.com</a
+        >
+      </div>
+
+      <div class="sign">
+        <p style="margin: 0">
+          King<br />
+          Cruiser.
+        </p>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
